@@ -1,0 +1,8 @@
+javascript:var socket = null;var lastDataSent = null;var using = null;alert("Started.");const nativeSend = window.WebSocket.prototype.send;window.WebSocket.prototype.send = function(data) {nativeSend.call(this, data);if (data != 2) {lastDataSent = data;}socket = this;};document.onkeydown = (e) => {if (e.repeat) {return}if (e.key == ";") {using = lastDataSent;alert("Saved.");} else if (e.key == "u") {if (socket && using) {socket.send(using);} else {alert("Try answering a question first.");};};};
+
+
+
+Press the bookmarkletand then click "u"
+Answer a question
+On the "correct" screen, click ";"
+spam press u for free stuff
